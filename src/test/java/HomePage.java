@@ -3,6 +3,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import static org.hamcrest.CoreMatchers.is;
+import java.time.Duration;
 import java.util.Map;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -34,7 +35,7 @@ public class HomePage {
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 5);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     // Нажатие на кнопку "Да, все привыкли" (принятие cookie)
