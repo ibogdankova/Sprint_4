@@ -3,6 +3,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.hamcrest.CoreMatchers.is;
+import java.time.Duration;
 
 public class OrderPage {
         private final WebDriver driver;
@@ -38,11 +39,11 @@ public class OrderPage {
         // кнопка "Заказать"
         private final By rentButtonOrder = By.xpath(".//div[contains(@class, 'Order_Buttons')]/button[text()='Заказать']");
         // кнопка подтверждения заказа "Да"
-        private final By rentButtonOrderYes = By.xpath(".//button[text()='Да']");
+        private final By rentButtonAcceptOrder = By.xpath(".//button[text()='Да']");
 
-        public OrderPageScooter(WebDriver driver) {
+        public OrderPage(WebDriver driver) {
             this.driver = driver;
-            this.wait = new WebDriverWait(driver, 5);
+            this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         }
 
         /**
@@ -150,7 +151,7 @@ public class OrderPage {
          * Подтверждает заказ, нажав кнопку "Да"
          */
         public void confirmOrder() {
-            wait.until(ExpectedConditions.elementToBeClickable(rentButtonOrderYes)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(rentButtonAcceptOrder)).click();
         }
 
         /**
