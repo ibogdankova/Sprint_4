@@ -9,9 +9,7 @@ public class OrderPage {
         private final WebDriver driver;
         private final WebDriverWait wait;
 
-        // Текст заголовка страницы "Для кого самокат"
-        public static final String TEXT_ORDER_HEADER = "Для кого самокат";
-        // Текст кнопки "Посмотреть статус"
+              // Текст кнопки "Посмотреть статус"
         public static final String BUTTON_STATUS_TEXT = "Посмотреть статус";
         // Локаторы
         // заголовок "Для кого самокат"
@@ -170,14 +168,3 @@ public class OrderPage {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(buttonStatus)).getText();
         }
 
-        /**
-         * Проверяет, что текст элемента на странице соответствует ожидаемому значению
-         * @param actualText фактический текст элемента
-         * @param expectedText ожидаемый текст
-         */
-        public void verifyPageElementText(String actualText, String expectedText) {
-            MatcherAssert.assertThat(actualText, is(expectedText));
-        }
-
-
-}
